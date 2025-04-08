@@ -20,16 +20,35 @@ const App = () => {
   const [lannisterMembers, setLannisterMembers] = useState(houseLannister);
   const [tyrellMembers, setTyrellMembers] = useState(houseTyrell);
   const [baratheonMembers, setBaratheonMembers] = useState(houseBaratheon);
-  
+
+  const addMemberToHouse = (newMember) => {
+    switch (newMember.house.name) {
+      case 'House Stark':
+        setStarkMembers([...starkMembers, newMember]);
+        break;
+      case 'House Lannister':
+        setLannisterMembers([...lannisterMembers, newMember]);
+        break;
+      case 'House Tyrell':
+        setTyrellMembers([...tyrellMembers, newMember]);
+        break;
+      case 'House Baratheon':
+        setBaratheonMembers([...baratheonMembers, newMember]);
+        break;
+      default:
+        console.log('no matching houses')
+    }
+  };
+
   return (
     <main className="app-container">
       <NavBar setSection={setSection} />
       <div className="content-container">
-        {section === 'Home' && <Home gotFacts={gotFacts} houses={houses}/>}
-        {section === 'Stark' && <HouseStark starks={houseStark} />}
-        {section === 'Lannister' && <HouseLannister lannisters={houseLannister} />}
-        {section === 'Tyrell' && <HouseTyrell tyrell={houseTyrell} />}
-        {section === 'Baratheon' && <HouseBaratheon baratheon={houseBaratheon} />}
+        {section === 'Home' && <Home gotFacts={gotFacts} houses={houses} addMemberToHouse={addMemberToHouse}/>}
+        {section === 'Stark' && <HouseStark starks={starkMembers} />}
+        {section === 'Lannister' && <HouseLannister lannisters={lannisterMembers} />}
+        {section === 'Tyrell' && <HouseTyrell tyrell={tyrellMembers} />}
+        {section === 'Baratheon' && <HouseBaratheon baratheon={baratheonMembers} />}
         {section === 'Maps' && <Maps maps={maps} />}
       </div>
     </main>

@@ -21,7 +21,9 @@ const handleSubmit = (event) => {
     event.preventDefault();
     const randomHouseIndex = Math.floor(Math.random() * props.houses.length);
     const assignedHouse = props.houses[randomHouseIndex];
-    setUserMember([...userMember, {...newMember, house: assignedHouse}])
+    const addedMember = {...newMember, house: assignedHouse}
+    setUserMember([...userMember, addedMember]);
+    props.addMemberToHouse(addedMember)
     setNewMember({name: '', title: '', description: '', house: ''})
 }
 const handleInputChange = (event) => {
@@ -29,10 +31,9 @@ const handleInputChange = (event) => {
 };
     return (
         <>
-            <button onClick={handlePrevious}>Previous</button>
             <h1 className="home-text">Welcome to the Realm of Thrones</h1>
             <p>{props.gotFacts[currentIndex]}</p>
-            <button onClick={handleNext}>Next</button>
+            <button onClick={handlePrevious}>Previous</button><button onClick={handleNext}>Next</button>
             <div className="form-container">
                 <h2>Bend the knee! Join a house!</h2>
                 <form onSubmit={handleSubmit}>
