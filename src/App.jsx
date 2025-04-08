@@ -6,6 +6,7 @@ import HouseLannister from './components/HouseLannister/HouseLannister.jsx';
 import HouseTyrell from './components/HouseTyrell/HouseTyrell.jsx';
 import HouseBaratheon from './components/HouseBaratheon/HouseBaratheon.jsx';
 import Maps from './components/Maps/Maps.jsx';
+import Home from './components/Home/Home.jsx';
 // src/App.jsx
 
 // File Purpose: This COMPONENT manages the current section state and renders sections based on navigation.
@@ -49,6 +50,18 @@ const maps = [
   { name: 'Westeros', imgSrc: 'https://i.imgur.com/Lfs8MQf.png', imgAlt: 'Map of Westeros', id: 2},
   { name: 'Essos', imgSrc: 'https://i.imgur.com/hvbI4O7.jpeg', imgAlt: 'Map of Essos', id: 3}
 ]
+const gotFacts = [
+  "The Iron Throne used in the show is made from over 200 swords — but in the books, it's described as towering and twisted with thousands.",
+  "Maisie Williams (Arya Stark) and Sophie Turner (Sansa Stark) became best friends in real life while filming the show.",
+  "The Dothraki language was entirely created for the show by a linguist, and it has its own grammar and over 3,000 words.",
+  "Charles Dance (Tywin Lannister) once said his armor was so heavy he couldn't sit down between takes.",
+  "Hodor's real name is Wylis in the show — in the books, it's Walder.",
+  "Kit Harington (Jon Snow) and Rose Leslie (Ygritte) fell in love during filming and are married in real life.",
+  "The Night King never speaks a single word throughout the entire series.",
+  "The infamous Red Wedding scene was inspired by two real historical events: the Black Dinner and the Glencoe Massacre.",
+  "Daenerys Targaryen's title got longer over time: by season 7, she was the 'Breaker of Chains, Mother of Dragons, Khaleesi of the Great Grass Sea, The Unburnt, Queen of the Andals and the First Men.'",
+  "In season 1, the direwolf pups were played by real Northern Inuit dogs."
+];
 
 
 const App = () => {
@@ -60,7 +73,7 @@ const App = () => {
     <main className="app-container">
       <NavBar setSection={setSection} />
       <div className="content-container">
-        {section === 'Home' && <h1 className="home-text">Welcome to the Realm of Thrones</h1>}
+        {section === 'Home' && <Home gotFacts={gotFacts}/>}
         {section === 'Stark' && <HouseStark starks={houseStark} />}
         {section === 'Lannister' && <HouseLannister lannisters={houseLannister} />}
         {section === 'Tyrell' && <HouseTyrell tyrell={houseTyrell} />}
