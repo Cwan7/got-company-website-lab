@@ -1,15 +1,14 @@
 import {useState} from 'react';
 
 const HouseLannister = (props) => {
-const [show, setShow] = useState(false);
+// const [show, setShow] = useState(false);
 
-const displayHouse = () => {
-    setShow(!show);
-}
+// const displayHouse = () => {
+//     setShow(!show);
+// }
     return (
 <div>
-      <h2 onClick={displayHouse}>House Lannister</h2>
-      {show && (
+      <h2>House Lannister</h2>
         <ul>
           {props.lannisters.map((member, index) => (
             <li key={index} className="house-cards">
@@ -19,7 +18,6 @@ const displayHouse = () => {
             </li>
           ))}
         </ul>
-      )}
     </div>
         
     )

@@ -1,13 +1,16 @@
+const NavBar = ({ setSection }) => {
 
-const Navbar = (props) => {
     return (
-    <nav className="navbar">
-        <ul>
-           <li><a href="#">Home</a></li>
-           <li><a href="#Stark">Starks</a></li>
-           <li><a href="#Lannister">Lannister</a></li>
-        </ul>
-    </nav>
+      <nav className="nav-bar">
+        <button onClick={() => setSection('Home')}>🏠 Home</button>
+        <button onClick={() => setSection('Stark')}>🐺 House Stark</button>
+        <button onClick={() => setSection('Lannister')}>🦁 House Lannister</button>
+        <button onClick={() => setSection('Tyrell')}>🌹 House Tyrell</button>
+        <button onClick={() => setSection('Baratheon')}>🦌 House Baratheon</button>
+        <button onClick={() => setSection('Maps')}>🗺️ Maps</button>
+      </nav>
     );
-};
-export default Navbar;
+  };
+  
+  
+  export default NavBar;

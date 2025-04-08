@@ -57,17 +57,18 @@ const App = () => {
 
   // 3. return JSX based on section
   return (
-    <main>
+    <main className="app-container">
       <NavBar setSection={setSection} />
-      <div className="houses-container">
-        <HouseStark starks={houseStark}/>
-        <HouseLannister lannisters={houseLannister}/>
-        <HouseTyrell tyrell={houseTyrell}/>
-        <HouseBaratheon baratheon={houseBaratheon}/>
+      <div className="content-container">
+        {section === 'Home' && <h1 className="home-text">Welcome to the Realm of Thrones</h1>}
+        {section === 'Stark' && <HouseStark starks={houseStark} />}
+        {section === 'Lannister' && <HouseLannister lannisters={houseLannister} />}
+        {section === 'Tyrell' && <HouseTyrell tyrell={houseTyrell} />}
+        {section === 'Baratheon' && <HouseBaratheon baratheon={houseBaratheon} />}
+        {section === 'Maps' && <Maps maps={maps} />}
       </div>
-      <Maps maps={maps}/>
     </main>
   );
-}
+};
 
 export default App;
