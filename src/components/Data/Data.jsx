@@ -46,3 +46,9 @@ export const houseStark = [
     "Daenerys Targaryen's title got longer over time: by season 7, she was the 'Breaker of Chains, Mother of Dragons, Khaleesi of the Great Grass Sea, The Unburnt, Queen of the Andals and the First Men.'",
     "In season 1, the direwolf pups were played by real Northern Inuit dogs."
   ];
+  export const houses = [
+    {name: 'House Stark', img: '🐺'},
+    {name: 'House Lannister', img: '🦁'},
+    {name: 'House Tyrell', img: '🌹'},
+    {name: 'House Baratheon', img: '🦌'},
+  ] 

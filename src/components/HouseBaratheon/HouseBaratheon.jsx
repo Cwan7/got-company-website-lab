@@ -8,7 +8,7 @@ const HouseBaratheon = (props) => {
 // }
     return (
     <div id="house-baratheon">
-      <h2 >House Lannister</h2>
+      <h2 >House Baratheon</h2>
         <ul>
           {props.baratheon.map((member, index) => (
             <li key={index} className="house-cards">

@@ -7,7 +7,7 @@ import HouseTyrell from './components/HouseTyrell/HouseTyrell.jsx';
 import HouseBaratheon from './components/HouseBaratheon/HouseBaratheon.jsx';
 import Maps from './components/Maps/Maps.jsx';
 import Home from './components/Home/Home.jsx';
-import { houseStark, houseLannister, houseTyrell, houseBaratheon, maps, gotFacts } from './components/Data/Data.jsx'
+import { houses, houseStark, houseLannister, houseTyrell, houseBaratheon, maps, gotFacts } from './components/Data/Data.jsx'
 // src/App.jsx
 
 // File Purpose: This COMPONENT manages the current section state and renders sections based on navigation.
@@ -15,11 +15,17 @@ import { houseStark, houseLannister, houseTyrell, houseBaratheon, maps, gotFacts
 
 const App = () => {
   const [section, setSection] = useState('Home');
+
+  const [starkMembers, setStarkMembers] = useState(houseStark);
+  const [lannisterMembers, setLannisterMembers] = useState(houseLannister);
+  const [tyrellMembers, setTyrellMembers] = useState(houseTyrell);
+  const [baratheonMembers, setBaratheonMembers] = useState(houseBaratheon);
+  
   return (
     <main className="app-container">
       <NavBar setSection={setSection} />
       <div className="content-container">
-        {section === 'Home' && <Home gotFacts={gotFacts}/>}
+        {section === 'Home' && <Home gotFacts={gotFacts} houses={houses}/>}
         {section === 'Stark' && <HouseStark starks={houseStark} />}
         {section === 'Lannister' && <HouseLannister lannisters={houseLannister} />}
         {section === 'Tyrell' && <HouseTyrell tyrell={houseTyrell} />}

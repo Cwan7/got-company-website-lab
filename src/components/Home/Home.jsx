@@ -3,11 +3,13 @@ import { useState } from 'react';
 const Home = (props) => {
 const [currentIndex, setCurrentIndex] = useState(0);
 const [userMember, setUserMember] = useState([])
-const [newMember, setNewMember] = useState([{
+const [newMember, setNewMember] = useState({
     name: '',
     title: '',
     description: '',
-}])
+    house: '',
+})
+// setNewMember({house:"Rose"})
 
 const handlePrevious = () => {
     setCurrentIndex((currentIndex - 1 + props.gotFacts.length) % props.gotFacts.length);
@@ -17,9 +19,10 @@ const handleNext = () => {
 }
 const handleSubmit = (event) => {
     event.preventDefault();
-    setUserMember([...userMember, newMember])
-    setNewMember({name: '', title: '', description: ''})
-    console.log(userMember)
+    const randomHouseIndex = Math.floor(Math.random() * props.houses.length);
+    const assignedHouse = props.houses[randomHouseIndex];
+    setUserMember([...userMember, {...newMember, house: assignedHouse}])
+    setNewMember({name: '', title: '', description: '', house: ''})
 }
 const handleInputChange = (event) => {
     setNewMember({...newMember, [event.target.name]: event.target.value});
@@ -31,6 +34,7 @@ const handleInputChange = (event) => {
             <p>{props.gotFacts[currentIndex]}</p>
             <button onClick={handleNext}>Next</button>
             <div className="form-container">
+                <h2>Bend the knee! Join a house!</h2>
                 <form onSubmit={handleSubmit}>
                     <label name="name">Enter Your Name: </label>
                     <input
@@ -63,12 +67,12 @@ const handleInputChange = (event) => {
                 </form>
             </div>
             <div className="new-member-div">
-                
                 {userMember.map((member, index) => (
                     <div key={index}>
-                        <h3>{member.name}</h3>
-                        <p>{member.title}</p>
-                        <p>{member.description}</p>
+                        <h3>Name: {member.name}</h3>
+                        <p>Title: {member.title}</p>
+                        <p>Description: {member.description}</p>
+                        <p>House: {member.house.name} {member.house.img}</p>
                     </div>
                 ))}
                 

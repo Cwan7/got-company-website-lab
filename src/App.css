@@ -1,17 +1,25 @@
+body,
 .app-container {
   font-family: 'Cinzel', serif;
   background-color: #121212;
-  color: #f0e6d2;
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/fancy-cushion.png');
+  background-repeat: repeat;
+  background-size: auto;
+  color: #f5f5dc;
   min-height: 100vh;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
+/* Content Container */
 .content-container {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* ---------------------------------- */
-/* NavBar Styles */
-/* ---------------------------------- */
+/* NavBar */
 .nav-bar {
   background-color: #1a1a1a;
   padding: 20px;
@@ -37,27 +45,144 @@
   color: #fff;
 }
 
-/* ---------------------------------- */
-/* Home Heading */
-/* ---------------------------------- */
+/* Home Page */
 .home-text {
   text-align: center;
-  font-size: 28px;
-  margin-top: 40px;
-  font-weight: bold;
+  font-size: 32px;
+  margin: 30px 0;
+  color:#f0e6d2;;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* ---------------------------------- */
-/* Base House Styles Shared by All */
-/* ---------------------------------- */
-div > ul {
+.content-container > p {
+  font-size: 26px;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  color: #f0e6d2;;
+  text-shadow: 1px 1px 2px #000;
+}
+
+form {
+  text-align: center;
+  margin: 20px 0;
+}
+
+input {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  width: 250px;
+}
+
+/* Home Page Buttons */
+.content-container > button,
+.form-container button[type="submit"] {
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
+  color: #f0e6d2;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  display: block;
+}
+
+.content-container > button:hover,
+.form-container button[type="submit"]:hover {
+  background-color: #444;
+  color: #fff;
+  border-color: #888;
+  transform: scale(1.05);
+}
+
+.form-container button[type="submit"] {
+  border-color: gold;
+  background-color: #3b1f00;
+  color: gold;
+}
+
+.form-container button[type="submit"]:hover {
+  border-color: #ffc400;
+  background-color: #4b2c00;
+  color: #fff9dc;
+}
+
+/* New Members */
+.new-member-div {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.new-member-div div {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* House Sections */
+#house-stark,
+#house-lannister,
+#house-tyrell,
+#house-baratheon {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#house-stark {
+  background: linear-gradient(to bottom, #1f1f1f, #2c3e50);
+  border-top: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+}
+
+#house-lannister {
+  background: linear-gradient(to bottom, #3c0000, #730000);
+  border-top: 2px solid gold;
+  border-bottom: 2px solid gold;
+}
+
+#house-tyrell {
+  background: linear-gradient(to bottom, #153f28, #2b713d);
+  border-top: 2px solid #7fbf6b;
+  border-bottom: 2px solid #7fbf6b;
+}
+
+#house-baratheon {
+  background: linear-gradient(to bottom, #3b3b00, #8f8f00);
+  border-top: 2px solid #f2e679;
+  border-bottom: 2px solid #f2e679;
+}
+
+#house-stark h2,
+#house-lannister h2,
+#house-tyrell h2,
+#house-baratheon h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fffdf5;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Character Cards */
+ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 0;
   list-style: none;
-  margin-top: 30px;
 }
 
 .house-cards {
@@ -68,7 +193,7 @@ div > ul {
   width: 250px;
   color: #f0f0f0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .house-cards:hover {
@@ -76,86 +201,33 @@ div > ul {
   border-color: #aaa;
 }
 
-/* ---------------------------------- */
-/* House Stark Styling */
-/* ---------------------------------- */
-div:has(> h2:contains("House Stark")) {
-  background: linear-gradient(to bottom, #1f1f1f, #2c3e50);
-  padding: 40px 20px;
-  border-top: 2px solid #aaa;
-  border-bottom: 2px solid #aaa;
+/* Maps */
+.mapCard {
+  margin-bottom: 30px;
   text-align: center;
 }
 
-div:has(> h2:contains("House Stark")) h2 {
-  font-size: 28px;
-  color: #e0e0e0;
-  margin-bottom: 10px;
+.mapCard img {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* ---------------------------------- */
-/* House Lannister Styling */
-/* ---------------------------------- */
-div:has(> h2:contains("House Lannister")) {
-  background: linear-gradient(to bottom, #3c0000, #730000);
-  padding: 40px 20px;
-  border-top: 2px solid gold;
-  border-bottom: 2px solid gold;
-  text-align: center;
+
+#house-stark .house-cards {
+  color: #cfdde7; /* icy pale blue-gray */
 }
 
-div:has(> h2:contains("House Lannister")) h2 {
-  font-size: 28px;
-  color: gold;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
+#house-lannister .house-cards {
+  color: #ffd700; /* lion gold */
 }
 
-div:has(> h2:contains("House Lannister")) h2:hover {
-  color: #ffd700;
-  transform: scale(1.05);
-}
-/* .app-container {
-  font-family: 'Cinzel', serif;
-  background-color: #121212;
-  color: #f0e6d2;
-  min-height: 100vh;
+#house-tyrell .house-cards {
+  color: #9acd32; /* vibrant green */
 }
 
-.content-container {
-  padding: 20px;
+#house-baratheon .house-cards {
+  color: #ffecb3; /* golden antler cream */
 }
-
-.nav-bar {
-  background-color: #1a1a1a;
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 2px solid #444;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.nav-bar button {
-  background-color: #2e2e2e;
-  color: #f0e6d2;
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.nav-bar button:hover {
-  background-color: #444;
-  color: #fff;
-}
-
-.home-text {
-  text-align: center;
-  font-size: 28px;
-  margin-top: 40px;
-  font-weight: bold;
-} */
