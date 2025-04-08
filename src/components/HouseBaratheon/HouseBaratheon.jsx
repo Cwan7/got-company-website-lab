@@ -7,7 +7,7 @@ const HouseBaratheon = (props) => {
 //     setShow(!show);
 // }
     return (
-<div>
+    <div id="house-baratheon">
       <h2 >House Lannister</h2>
         <ul>
           {props.baratheon.map((member, index) => (

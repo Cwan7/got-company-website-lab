@@ -7,7 +7,7 @@ const HouseTyrell = (props) => {
     //     setShow(!show);
     // }
         return (
-        <div>
+        <div id="house-tyrell">
           <h2>House Tyrell</h2>
             <ul>
               {props.tyrell.map((member, index) => (

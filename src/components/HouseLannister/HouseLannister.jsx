@@ -7,7 +7,7 @@ const HouseLannister = (props) => {
 //     setShow(!show);
 // }
     return (
-<div>
+    <div id="house-lannister">
       <h2>House Lannister</h2>
         <ul>
           {props.lannisters.map((member, index) => (
